@@ -6,22 +6,23 @@
 
 double f(double x, double y[], int i) {
     if (i == 0) {
-        return y[1];  // First equation
+        return y[0]*y[0];  // First equation
     } else if (i == 1) {
-        return -y[0]; // Second equation
+        return -y[1]+y[0]; // Second equation
     } else {
-        return 2 * y[2]; // Third equation
+        return 1-2 * y[2]; // Third equation
     }
 }
 
-void RungeKutta(double x0, double y0[], double h, int n) {
+// RungeKutta function: receives initial x, initial y_i, step size and number of iterations
+void RungeKutta(double x0, double y0[], double h, int n) {              
     double k1[N_eq], k2[N_eq], k3[N_eq], k4[N_eq];
     double y_temp[N_eq];
 
     double x = x0;
     double y[N_eq];
     for (int i = 0; i < N_eq; i++) {
-        y[i] = y0[i];
+        y[i] = y0[i];                       // Initialize y_i as y_i(x_0)
     }
 
     for (int i = 0; i < n; i++) {
