@@ -1,5 +1,3 @@
-# curly-palm-tree
+# Numerical methods
 
-##Edit file
-
-Markdown file and description of repo
+My implementation of some useful numerical methods
